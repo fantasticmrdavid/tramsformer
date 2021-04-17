@@ -29,9 +29,9 @@ const gastbySourcePrismicConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Prismic Blog',
-    description: 'Blog example for Gatsby & Prismic',
-    author: '@levimykel',
+    title: 'Project Tramsformation',
+    description: 'Blog for the Tramsformer',
+    author: 'David Li',
   },
   plugins: [
     gastbySourcePrismicConfig,

@@ -13,9 +13,6 @@ export const query = graphql`
         headline {
           text
         }
-        image {
-          url
-        }
       }
       id
       type
