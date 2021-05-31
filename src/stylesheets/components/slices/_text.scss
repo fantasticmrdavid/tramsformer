@@ -18,4 +18,15 @@
       background: none;
     }
   }
+
+  div[data-oembed-type="video"] > div {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+  }
+
+  div[data-oembed-type="video"] > div > iframe {
+    width: 600px;
+    height: 350px;
+  }
 }

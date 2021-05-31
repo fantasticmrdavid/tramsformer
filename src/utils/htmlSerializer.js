@@ -8,6 +8,7 @@ import { Link } from 'gatsby'
 import { linkResolver } from './linkResolver'
 
 const htmlSerializer = (type, element, content, children, index) => {
+
   // Generate links to Prismic Documents as <Link> components
   if (type === Elements.hyperlink) {
     let result = ''
