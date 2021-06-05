@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import { Date, RichText } from 'prismic-reactjs'
 import Layout from '../layouts'
 import { ImageCaption, Quote, Text } from '../slices'
 
@@ -38,6 +38,14 @@ const PostSlices = ({ slices }) =>
 
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
+  let postDate = Date(blogPost.date)
+  postDate = postDate
+    ? new Intl.DateTimeFormat('en-US', {
+      month: 'short',
+      day: '2-digit',
+      year: 'numeric',
+    }).format(postDate)
+    : ''
   return (
     <div>
       <div className="container post-header">
@@ -49,6 +57,9 @@ const PostBody = ({ blogPost }) => {
             ? RichText.asText(blogPost.title.raw)
             : 'Untitled'}
         </h1>
+        <p className="date">
+          <time>{postDate}</time>
+        </p>
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={blogPost.body} />
