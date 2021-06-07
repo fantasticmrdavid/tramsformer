@@ -39,6 +39,7 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-styled-components",
     "gatsby-alias-imports",
+    "gatsby-plugin-minify",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
