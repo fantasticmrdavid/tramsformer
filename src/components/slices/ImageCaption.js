@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { RichText } from 'prismic-reactjs'
+import React, { Fragment } from "react";
+import { RichText } from "prismic-reactjs";
 
 // Default Image
 const DefaultImage = ({ slice }) => (
@@ -7,14 +7,14 @@ const DefaultImage = ({ slice }) => (
     <figcaption className="block-img">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
       {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
+      && RichText.asText(slice.primary.caption.raw) !== "" ? (
         <figcaption className="image-label">
           {RichText.asText(slice.primary.caption.raw)}
         </figcaption>
         ) : null}
     </figcaption>
   </div>
-)
+);
 
 // Emphasized Image
 const EmphasizedImage = ({ slice }) => (
@@ -22,14 +22,14 @@ const EmphasizedImage = ({ slice }) => (
     <figcaption className="block-img emphasized">
       <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
       {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
+      && RichText.asText(slice.primary.caption.raw) !== "" ? (
         <figcaption className="image-label">
           {RichText.asText(slice.primary.caption.raw)}
         </figcaption>
         ) : null}
     </figcaption>
   </div>
-)
+);
 
 // Full Width Image
 const FullWidthImage = ({ slice }) => (
@@ -39,25 +39,25 @@ const FullWidthImage = ({ slice }) => (
   >
     <div className="wrapper">
       {slice.primary.caption
-      && RichText.asText(slice.primary.caption.raw) !== '' ? (
+      && RichText.asText(slice.primary.caption.raw) !== "" ? (
         <span className="image-label">
           {RichText.asText(slice.primary.caption.raw)}
         </span>
         ) : null}
     </div>
   </div>
-)
+);
 
 // Function to determine the image type
 const renderSwitch = (slice) => {
   switch (slice.slice_label) {
-    case 'image-full-width':
-      return <FullWidthImage slice={slice} />
-    case 'emphasized':
-      return <EmphasizedImage slice={slice} />
+    case "image-full-width":
+      return <FullWidthImage slice={slice} />;
+    case "emphasized":
+      return <EmphasizedImage slice={slice} />;
     default:
-      return <DefaultImage slice={slice} />
+      return <DefaultImage slice={slice} />;
   }
-}
+};
 
-export default ({ slice }) => <>{renderSwitch(slice)}</>
+export default ({ slice }) => <>{renderSwitch(slice)}</>;

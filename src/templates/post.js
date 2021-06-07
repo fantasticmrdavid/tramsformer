@@ -1,7 +1,6 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Post from '../components/Post';
-import { withPreview } from 'gatsby-source-prismic'
+import { graphql } from "gatsby";
+import { withPreview } from "gatsby-source-prismic";
+import Post from "components/Post";
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`
@@ -54,6 +53,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default withPreview(Post)
+export default withPreview(Post);

@@ -1,51 +1,50 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Date, RichText } from 'prismic-reactjs'
-import Layout from '../layouts'
-import { ImageCaption, Quote, Text } from '../slices'
+import React from "react";
+import { Link } from "gatsby";
+import { Date, RichText } from "prismic-reactjs";
+import Layout from "../layouts";
+import { ImageCaption, Quote, Text } from "../slices";
 
 // Sort and display the different slice options
-const PostSlices = ({ slices }) =>
-  slices.map((slice, index) => {
-    const res = (() => {
-      switch (slice.slice_type) {
-        case 'text':
-          return (
-            <div key={index} className="homepage-slice-wrapper">
-              <Text slice={slice} />
-            </div>
-          )
+const PostSlices = ({ slices }) => slices.map((slice, index) => {
+  const res = (() => {
+    switch (slice.slice_type) {
+      case "text":
+        return (
+          <div key={index} className="homepage-slice-wrapper">
+            <Text slice={slice} />
+          </div>
+        );
 
-        case 'quote':
-          return (
-            <div key={index} className="homepage-slice-wrapper">
-              <Quote slice={slice} />
-            </div>
-          )
+      case "quote":
+        return (
+          <div key={index} className="homepage-slice-wrapper">
+            <Quote slice={slice} />
+          </div>
+        );
 
-        case 'image_with_caption':
-          return (
-            <div key={index} className="homepage-slice-wrapper">
-              <ImageCaption slice={slice} />
-            </div>
-          )
+      case "image_with_caption":
+        return (
+          <div key={index} className="homepage-slice-wrapper">
+            <ImageCaption slice={slice} />
+          </div>
+        );
 
-        default:
-      }
-    })()
-    return res
-  })
+      default:
+    }
+  })();
+  return res;
+});
 
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
-  let postDate = Date(blogPost.date)
+  let postDate = Date(blogPost.date);
   postDate = postDate
-    ? new Intl.DateTimeFormat('en-US', {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
+    ? new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
     }).format(postDate)
-    : ''
+    : "";
   return (
     <div>
       <div className="container post-header">
@@ -55,7 +54,7 @@ const PostBody = ({ blogPost }) => {
         <h1>
           {RichText.asText(blogPost.title.raw).length !== 0
             ? RichText.asText(blogPost.title.raw)
-            : 'Untitled'}
+            : "Untitled"}
         </h1>
         <p className="date">
           <time>{postDate}</time>
@@ -64,19 +63,19 @@ const PostBody = ({ blogPost }) => {
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={blogPost.body} />
     </div>
-  )
-}
+  );
+};
 
 export const Post = ({ data }) => {
-  if (!data) return null
+  if (!data) return null;
   // Define the Post content returned from Prismic
-  const post = data.prismicPost.data
+  const post = data.prismicPost.data;
 
   return (
     <Layout>
       <PostBody blogPost={post} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

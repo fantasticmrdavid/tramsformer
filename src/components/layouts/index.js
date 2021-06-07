@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
-import Footer from './Footer'
-import '../../stylesheets/main.scss'
+import React, { Fragment } from "react";
+import { StaticQuery, graphql } from "gatsby";
+import { Helmet } from "react-helmet";
+import Footer from "./Footer";
+import "../../stylesheets/main.scss";
 
 export default (props) => (
   <StaticQuery
@@ -19,11 +19,11 @@ export default (props) => (
     // eslint-disable-next-line react/jsx-props-no-spreading
     render={(data) => <Layout data={data} {...props} />}
   />
-)
+);
 
 const Layout = ({ data, children }) => {
   // Define the meta title and description
-  const { title, description } = data.site.siteMetadata
+  const { title, description } = data.site.siteMetadata;
 
   return (
     <>
@@ -44,5 +44,5 @@ const Layout = ({ data, children }) => {
       <main>{children}</main>
       <Footer />
     </>
-  )
-}
+  );
+};

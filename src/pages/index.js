@@ -1,6 +1,7 @@
-import { graphql } from 'gatsby'
-import { withPreview } from 'gatsby-source-prismic'
-import Homepage from './homepage'
+import { graphql } from "gatsby";
+import { withPreview } from "gatsby-source-prismic";
+import "antd/dist/antd.css";
+import Homepage from "./homepage";
 
 // Query for the Blog Home content in Prismic
 export const query = graphql`
@@ -46,6 +47,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default withPreview(Homepage)
+export default withPreview(Homepage);

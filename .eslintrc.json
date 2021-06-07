@@ -22,8 +22,21 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/no-array-index-key": "off",
       "react/prop-types": "off",
-      "semi": ["error", "never"],
-      "consistent-return": "off"
+      "consistent-return": "off",
+      "quotes": ["error", "double"],
+      "import/prefer-default-export": "off",
+      "import/no-named-as-default": "off"
+    },
+    "settings": {
+      "import/resolver": {
+        "alias": [
+            ["src", "./src"],
+            ["pages", "./src/pages"],
+            ["components", "./src/components"],
+            ["images", "./src/images"],
+            ["fonts", "./src/fonts"],
+            ["styles", "./src/styles"]
+        ]
+      }
     }
-  }
-  
+}
