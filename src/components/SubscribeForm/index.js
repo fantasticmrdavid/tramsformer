@@ -1,57 +1,95 @@
 import React, { useState } from "react";
+import jsonp from "jsonp";
+import toQueryString from "to-querystring";
 import Input from "antd/es/input";
 import Button from "antd/es/button";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-// import jsonp from "jsonp";
-// import queryString from "query-string";
+import displayMessage from "antd/es/message";
 import { Container, FormContainer } from "./styles";
 
-const url = "//gmail.us2.list-manage.com/subscribe/post?u=cc89c4d33a911046ebe0831ac&amp;id=173c9d191c";
+const urlBase = "//gmail.us2.list-manage.com/subscribe/post?u=cc89c4d33a911046ebe0831ac&amp;id=173c9d191c";
 
 export default () => {
-  const [state, setState] = useState({
+  const initialState = {
     email: undefined,
-    isSubmitted: false,
+    message: undefined,
+    status: undefined,
     isValid: false,
-  });
+  };
+  const [state, setState] = useState(initialState);
+
+  const {
+    email,
+    status,
+    isValid,
+  } = state;
 
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const validateForm = () => emailRegex.test(state.email);
+  const validateForm = () => emailRegex.test(email);
+  const params = toQueryString({ EMAIL: email });
+  const url = `${urlBase.replace("/post?", "/post-json?")}&${params}`;
+
+  const subscribe = () => jsonp(
+    url,
+    { param: "c" },
+    (err, data) => {
+      if (err) {
+        setState({
+          ...state,
+          status: "error",
+          message: err,
+        });
+        console.error(err);
+        displayMessage.error("There was an error with your submission. Please try again later.");
+      } else if (data.result !== "success") {
+        setState({
+          ...state,
+          status: "error",
+          message: data.msg,
+        });
+        console.error(data.msg);
+        displayMessage.error("There was an error with your submission. Please try again later.");
+      } else {
+        setState({
+          ...state,
+          status: "success",
+          message: data.msg,
+        });
+        displayMessage.success("Thanks for subscribing!");
+        setTimeout(() => {
+          setState(initialState);
+        }, 3000);
+      }
+    },
+  );
 
   return (
-    <MailchimpSubscribe
-      url={url}
-      render={({
-        subscribe,
-        status,
-        message,
-      }) => (
-        <Container>
-          {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-          {status === "error" && <div style={{ color: "red" }}>{message}</div>}
-          {status === "success" && <div style={{ color: "green" }}>Subscribed !</div>}
-          <FormContainer>
-            <Input
-              type="email"
-              placeholder="Email"
-              onChange={(e) => setState({
-                ...state,
-                email: e.target.value,
-                isValid: validateForm(),
-              })}
-            />
-            <Button
-              type="primary"
-              disabled={!state.isValid}
-              onClick={() => subscribe({
-                EMAIL: state.email,
-              })}
-            >
-              Subscribe
-            </Button>
-          </FormContainer>
-        </Container>
-      )}
-    />
+    <Container>
+      <FormContainer>
+        <Input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setState({
+            ...state,
+            email: e.target.value,
+            isValid: validateForm(),
+          })}
+        />
+        <Button
+          type="primary"
+          disabled={!isValid}
+          onClick={() => {
+            setState({
+              ...state,
+              status: "sending",
+            });
+            subscribe({ EMAIL: email });
+          }}
+          loading={status === "sending"}
+        >
+          {status === "sending" ? "Submitting" : "Subscribe to the Mailing List"}
+        </Button>
+      </FormContainer>
+    </Container>
   );
 };
