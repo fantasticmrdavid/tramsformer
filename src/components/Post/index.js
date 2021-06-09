@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { Date, RichText } from "prismic-reactjs";
 import Layout from "../layouts";
 import { ImageCaption, Quote, Text } from "../slices";
+import { Container } from "./styles";
 
 // Sort and display the different slice options
 const PostSlices = ({ slices }) => slices.map((slice, index) => {
@@ -46,7 +47,7 @@ const PostBody = ({ blogPost }) => {
     }).format(postDate)
     : "";
   return (
-    <div>
+    <Container>
       <div className="container post-header">
         <div className="back">
           <Link to="/">back to list</Link>
@@ -62,7 +63,7 @@ const PostBody = ({ blogPost }) => {
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={blogPost.body} />
-    </div>
+    </Container>
   );
 };
 
