@@ -13,6 +13,7 @@ export const Container = styled.div`
   &:hover {
     opacity: 1;
     background-color: rgba(250, 173, 20, 0.2);
+    border-color: rgba(250, 173, 20, 0.4)
   }
   
   &:first-of-type {

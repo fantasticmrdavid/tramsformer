@@ -17,6 +17,7 @@
     },
     "plugins": ["react"],
     "rules": {
+      "no-console": ["error", { "allow": ["warn", "error"] }],
       "no-underscore-dangle": "off",
       "no-unused-vars": "off",
       "no-use-before-define": "off",

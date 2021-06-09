@@ -66,6 +66,7 @@ module.exports = {
       options: {
         fonts: [
           "roboto",
+          "wallpoet",
         ],
         display: "swap",
       },
