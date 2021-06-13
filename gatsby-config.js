@@ -31,7 +31,7 @@ module.exports = {
   siteMetadata: {
     title: "Project Tramsformation",
     description: "Blog for the Tramsformer",
-    author: "David Li",
+    author: "David Li"
   },
   plugins: [
     gastbySourcePrismicConfig,

@@ -1,8 +1,10 @@
-.ant-btn-primary {
+.ant-btn-primary,
+.ant-btn-primary:focus
+{
   background-color: #E78000FF;
   border-color: #E78000FF;
 
-  &:hover, &:active, &:focus {
+  &:hover, &:active {
     background-color: #A75D01FF;
     border-color: #A75D01FF;
   }

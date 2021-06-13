@@ -10,30 +10,38 @@ export const Container = styled.div`
   background: black;
   padding: 0.5em;
   margin-bottom: 2em;
-  z-index: 2;
-`;
-
-export const Nav = styled.nav`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  width: 700px;
-  
-  & > div:first-of-type {
-    text-align: left;
-  }
-
-  & > div:last-of-type {
-    text-align: right;
-  }
+  z-index: 3;
 `;
 
 export const NavItem = styled(Link)`
   color: white;
   font-size: 14px;
-  margin-left: 2em;
   
   &:hover {
-    color: #d87800;
+    color: var(--headingColor);
+  }
+`;
+
+export const Nav = styled.nav`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: var(--maxContentWidth);
+  text-transform: uppercase;
+  color: white;
+  
+  & > div:first-of-type {
+    text-align: left;
+    
+    & ${NavItem} {
+      margin-right: 2em;
+    }
+  }
+
+  & > div:last-of-type {
+    text-align: right;
+
+    & ${NavItem} {
+      margin-left: 2em;
+    }
   }
 `;

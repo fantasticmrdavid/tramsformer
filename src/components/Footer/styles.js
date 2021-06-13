@@ -9,6 +9,7 @@ export const Container = styled.div`
 export const FooterBar = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -24,7 +25,7 @@ export const Nav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
-  width: 700px;
+  width: var(--maxContentWidth);
   
   & > div:first-of-type {
     text-align: left;
@@ -38,13 +39,14 @@ export const Nav = styled.nav`
 export const NavItem = styled(Link)`
   color: white;
   margin-right: 2em;
+  text-transform: uppercase;
   
   &:hover {
-    color: #d87800;
+    color: var(--headingColor);
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ContentEndContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
@@ -75,4 +77,19 @@ export const ImageContainer = styled.div`
       }
     }
   }
+`;
+
+export const ContentEnd = styled.div`
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Note = styled.div`
+  width: 100%;
+  max-width: var(--maxContentWidth);
+  margin-top: 1em;
 `;

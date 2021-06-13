@@ -4,7 +4,9 @@ import { Link } from "gatsby";
 import Blinker from "components/Blinker";
 import BorderTracer from "components/BorderTracer";
 import theme from "styles/theme";
-import { Container, Meta, BracketLeft, BracketRight } from "./styles";
+import {
+  Container, Meta, BracketLeft, BracketRight,
+} from "./styles";
 
 // Function to retrieve a small preview of the post's text
 const firstParagraph = (post) => {

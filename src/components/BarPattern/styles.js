@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import theme from "styles/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -11,5 +10,5 @@ export const Container = styled.div`
 export const Bar = styled.div`
   background-color: rgba(0, 0, 0, 0.05);
   width: 30px;
-  height: ${(props) => (props.fullsize ? 100 : 50)}%;
+  height: 100%;
 `;

@@ -1,12 +1,13 @@
 import React from "react";
 import BarPattern from "components/BarPattern";
-import endOfBlogImg from "images/end_of_line_ticket.png";
 import {
   Container,
   FooterBar,
-  ImageContainer,
+  ContentEnd,
+  ContentEndContainer,
   Nav,
   NavItem,
+  Note,
 } from "./styles";
 
 const navList = [
@@ -26,11 +27,11 @@ const navList = [
 
 export default () => (
   <Container>
-    <ImageContainer>
-      <BarPattern direction={"left"} height={100} />
-      <img src={endOfBlogImg} alt={"End of blog"} />
-      <BarPattern direction={"right"} height={100} />
-    </ImageContainer>
+    <ContentEndContainer>
+      <BarPattern direction="left" height={60} />
+      <ContentEnd>End of the Line</ContentEnd>
+      <BarPattern direction="right" height={60} />
+    </ContentEndContainer>
     <FooterBar>
       <Nav>
         <div>
@@ -40,6 +41,12 @@ export default () => (
         </div>
         <div>{`Copyright ${new Date().getFullYear()} Project Tramsformation`}</div>
       </Nav>
+      <Note>
+        Project Tramsformation acknowledges the Traditional Custodians of the lands on which this
+        website and project was created, is hosted, and is viewed. This website was created on the
+        lands of the Boon Wurrung and Woiwurrung (Wurundjeri) peoples of the Kulin Nation. We pay
+        respects to their Elders past, present, and emerging.
+      </Note>
     </FooterBar>
   </Container>
 );

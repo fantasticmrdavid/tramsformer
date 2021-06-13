@@ -70,34 +70,6 @@ export const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.025);
   transition: 0.3s;
   opacity: 0.8;
-  
-  ${(props) => props.isFirst && css`
-      background-color: rgba(43, 250, 10, 0.1);
-      border: ${`1px solid ${transparentize(0.7, theme.colorPostHeadingFirst)}`};
-    
-      & ${Meta},
-      & ${BracketLeft},
-      & ${BracketRight},
-      & ${BracketLeft}::after,
-      & ${BracketRight}::after {
-        border-color: ${transparentize(0.7, theme.colorPostHeadingFirst)};
-        color: ${theme.colorPostHeadingFirst};
-      }
-
-      & ${Cursor} {
-        border-bottom-color: ${theme.colorPostHeadingFirst};
-      }
-    
-      &:hover {
-        h2 {
-          color: ${theme.colorPostHeading} !important;
-        }
-
-        & ${Cursor} {
-          border-bottom-color: ${theme.colorPostHeading};
-        }
-      }
-  `}
 
   &:hover {
     opacity: 1;
@@ -115,21 +87,14 @@ export const Container = styled.div`
 
     & ${Meta} {
       background-color: rgba(250, 173, 20, 0.4);
-      color: ${theme.colorPostHeading};
-    }
-  }
-  
-  &:first-of-type {
-    h2 {
-      font-size: 1.75rem;
-      color: ${theme.colorPostHeadingFirst};
+      color: var(--headingColor);
     }
   }
 
   h2 {
     margin: 0;
     font-size: 1.3rem;
-    color: ${theme.colorPostHeading};
+    color: var(--headingColor);
     text-align: left;
     font-weight: 400;
     transition: 0.3s;
@@ -142,5 +107,38 @@ export const Container = styled.div`
   p {
     margin-bottom: 1em;
   }
+  
+  ${(props) => props.isFirst && css`
+      background-color: rgba(43, 250, 10, 0.1);
+      border: ${`1px solid ${transparentize(0.7, theme.colorPostHeadingFirst)}`};
+    
+    & h2 {
+      font-size: 1.75rem;
+      color: var(--postHeadingFirstColor);
+    }
+    
+      & ${Meta},
+      & ${BracketLeft},
+      & ${BracketRight},
+      & ${BracketLeft}::after,
+      & ${BracketRight}::after {
+        border-color: ${transparentize(0.7, theme.colorPostHeadingFirst)};
+        color: var(--postHeadingFirstColor);
+      }
+
+      & ${Cursor} {
+        border-bottom-color: var(--postHeadingFirstColor);
+      }
+    
+      &:hover {
+        h2 {
+          color: var(--headingColor) !important;
+        }
+
+        & ${Cursor} {
+          border-bottom-color: var(--headingColor);
+        }
+      }
+  `}
 }
 `;

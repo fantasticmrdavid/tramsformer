@@ -10,7 +10,7 @@ import {
 } from "./styles";
 
 const BlogHomeHead = ({ home }) => (
-  <Container data-wio-id={home.id}>
+  <Container data-wio-id={home ? home.id : undefined}>
     <Content>
       <Background />
       <Header>

@@ -7,7 +7,6 @@ const theme = {
   colorDarkCharcoal: "#111",
   colorRed: "tomato",
 
-  colorPostHeading: "#d87800",
   colorPostHeadingFirst: "#57bb56",
   colorTextPrimary: "#aaa",
   colorBorder: "#aaa",

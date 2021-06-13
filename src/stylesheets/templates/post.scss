@@ -1,7 +1,5 @@
 
 .post-header {
-  padding: 20px 0;
-
   .date {
     text-align: right;
     color: #9A9A9A;
@@ -11,10 +9,11 @@
   .back {
     color: #9A9A9A;
     display: block;
-    max-width: 700px;
+    max-width: var(--maxContentWidth);
     margin: 0 auto 2em auto;
     font-family: $font-sans-serif;
-    font-size: 16px;
+    font-size: 14px;
+    text-transform: uppercase;
 
     &:before {
       content: '←';
@@ -27,6 +26,7 @@
       color: #9A9A9A;
 
       &:hover {
+        color: var(--headingColor);
         text-decoration: underline;
       }
     }

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { fadeIn } from "../../styles/animations";
 import MastheadBackground from "../../images/masthead_tfw.png";
 
 export const Container = styled.div`
@@ -16,7 +17,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   position: relative;
-  max-width: 700px;
+  max-width: var(--maxContentWidth);
   width: 100%;
   z-index: 1;
 `;
@@ -33,4 +34,6 @@ export const Background = styled.div`
   width: 100%;
   height: 100%;
   background: url(${MastheadBackground}) bottom right no-repeat;
+  animation: ${css`${fadeIn} 1s ease 1`};
+  animation-fill-mode: forwards;
 `;

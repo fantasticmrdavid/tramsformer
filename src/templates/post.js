@@ -5,6 +5,12 @@ import Post from "components/Post";
 // Query for the Blog Post content in Prismic
 export const query = graphql`
   query BlogPostQuery($uid: String) {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
     prismicPost(uid: { eq: $uid }) {
       id
       uid

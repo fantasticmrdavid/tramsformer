@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import HeaderBar from "components/HeaderBar";
