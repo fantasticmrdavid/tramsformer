@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Blinker from "components/Blinker";
 import BorderTracer from "components/BorderTracer";
 import theme from "styles/theme";
-import { Container } from "./styles";
+import { Container, Meta, BracketLeft, BracketRight } from "./styles";
 
 // Function to retrieve a small preview of the post's text
 const firstParagraph = (post) => {
@@ -43,27 +43,29 @@ const PostSummary = ({ post, id, isFirst }) => {
   // // Default title when post has no title set
   const defaultTitle = "Untitled";
   return (
-    <Container key={id}>
-      {
-        isFirst && (
-          <>
-            <BorderTracer cycleColor />
-            <BorderTracer direction="left" cycleColor />
-          </>
-        )
-      }
+    <Container key={id} isFirst={isFirst}>
       <Link to={post.node.url}>
+        {
+          isFirst && (
+            <>
+              <BracketLeft />
+              <BracketRight />
+              <BorderTracer cycleColor />
+              <BorderTracer direction="left" cycleColor />
+            </>
+          )
+        }
         <h2>
           {`> ${RichText.asText(post.node.data.title.raw).length !== 0
             ? RichText.asText(post.node.data.title.raw)
             : defaultTitle}`}
           {
-            isFirst && <Blinker color={theme.colorPostHeading} />
+            isFirst && <Blinker />
           }
         </h2>
-        <p className="blog-post-meta">
+        <Meta>
           <time>{postDate}</time>
-        </p>
+        </Meta>
         {/* Renders a small preview of the post's text */}
         {firstParagraph(post.node.data)}
       </Link>

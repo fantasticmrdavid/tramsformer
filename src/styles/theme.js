@@ -8,6 +8,7 @@ const theme = {
   colorRed: "tomato",
 
   colorPostHeading: "#d87800",
+  colorPostHeadingFirst: "#57bb56",
   colorTextPrimary: "#aaa",
   colorBorder: "#aaa",
   colorSidebar: "#232323",

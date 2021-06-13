@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../components/layouts";
-import BlogPosts from "../components/BlogPosts";
-import BlogHomeHead from "../components/BlogHomeHead";
+import Layout from "components/layouts";
+import PostListing from "components/PostListing";
+import BlogHomeHead from "components/BlogHomeHead";
 
 const Homepage = ({ data }) => {
   if (!data) return null;
@@ -12,7 +12,7 @@ const Homepage = ({ data }) => {
   return (
     <Layout>
       <BlogHomeHead home={home} />
-      <BlogPosts posts={posts} />
+      <PostListing posts={posts} />
     </Layout>
   );
 };

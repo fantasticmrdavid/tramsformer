@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
-import Footer from "./Footer";
+import HeaderBar from "components/HeaderBar";
+import Footer from "components/Footer";
 import "../../stylesheets/main.scss";
 
 export default (props) => (
@@ -41,6 +42,7 @@ const Layout = ({ data, children }) => {
           rel="stylesheet"
         />
       </Helmet>
+      <HeaderBar />
       <main>{children}</main>
       <Footer />
     </>
