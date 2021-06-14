@@ -11,6 +11,21 @@ export const query = graphql`
         description
       }
     }
+    allPrismicPost(sort: { fields: data___date, order: DESC }) {
+      edges {
+        node {
+          url
+          id
+          uid
+          type
+          data {
+            title {
+              raw
+            }
+          }
+        }
+      }
+    }
     prismicPost(uid: { eq: $uid }) {
       id
       uid

@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Container as BarPattern } from "components/BarPattern/styles";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   a {
     color: var(--headingColor);
 
@@ -47,4 +50,13 @@ export const DateContainer = styled.div`
       }
     }
   }
+`;
+
+export const Nav = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--maxContentWidth);
+  margin-bottom: 2em;
 `;

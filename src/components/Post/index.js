@@ -5,7 +5,7 @@ import { Date, RichText } from "prismic-reactjs";
 import BarPattern from "components/BarPattern";
 import Layout from "../layouts";
 import { ImageCaption, Quote, Text } from "../slices";
-import { Container, DateContainer } from "./styles";
+import { Container, DateContainer, Nav } from "./styles";
 
 // Sort and display the different slice options
 const PostSlices = ({ slices }) => slices.map((slice, index) => {
@@ -40,7 +40,13 @@ const PostSlices = ({ slices }) => slices.map((slice, index) => {
 
 // Display the title, date, and content of the Post
 const PostBody = (props) => {
-  const { blogPost, site } = props;
+  const {
+    blogPost,
+    site,
+    nextPost,
+    prevPost,
+  } = props;
+
   let postDate = Date(blogPost.date);
   postDate = postDate
     ? new Intl.DateTimeFormat("en-US", {
@@ -49,7 +55,12 @@ const PostBody = (props) => {
       year: "numeric",
     }).format(postDate)
     : "";
-  const postTitle = RichText.asText(blogPost.title.raw).length !== 0 ? RichText.asText(blogPost.title.raw) : "Untitled";
+
+  const postTitle = RichText.asText(blogPost.title.raw).length !== 0
+    ? RichText.asText(blogPost.title.raw) : "Untitled";
+  const prevTitle = prevPost ? RichText.asText(prevPost.node.data.title.raw) : undefined;
+  const nextTitle = nextPost ? RichText.asText(nextPost.node.data.title.raw) : undefined;
+
   return (
     <Container>
       <Helmet>
@@ -68,19 +79,43 @@ const PostBody = (props) => {
       </div>
       {/* Go through the slices of the post and render the appropiate one */}
       <PostSlices slices={blogPost.body} />
+      <Nav>
+        {
+          prevPost
+            ? <Link to={prevPost.node.url}>{`< ${prevTitle}`}</Link>
+            : <div />
+        }
+        {
+          nextPost
+            ? <Link to={nextPost.node.url}>{`${nextTitle} >`}</Link>
+            : <div />
+      }
+      </Nav>
     </Container>
   );
 };
 
-export const Post = ({ data }) => {
+export const Post = (props) => {
+  const { data } = props;
   if (!data) return null;
+
   // Define the Post content returned from Prismic
-  const { prismicPost, site } = data;
+  const { allPrismicPost, prismicPost, site } = data;
   const post = prismicPost.data;
+  const postIndex = allPrismicPost.edges.findIndex((p) => p.node.uid === prismicPost.uid);
 
   return (
     <Layout>
-      <PostBody blogPost={post} site={site} />
+      <PostBody
+        blogPost={post}
+        site={site}
+        nextPost={postIndex > 0 ? allPrismicPost.edges[postIndex - 1] : undefined}
+        prevPost={
+          postIndex < allPrismicPost.edges.length
+            ? allPrismicPost.edges[postIndex + 1]
+            : undefined
+        }
+      />
     </Layout>
   );
 };
