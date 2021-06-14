@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import BarPattern from "components/BarPattern";
 import {
   Container,
@@ -46,6 +47,11 @@ export default () => (
         website and project was created, is hosted, and is viewed. This website was created on the
         lands of the Boon Wurrung and Woiwurrung (Wurundjeri) peoples of the Kulin Nation. We pay
         respects to their Elders past, present, and emerging.
+      </Note>
+      <Note>
+        Website by
+        {" "}
+        <Link href="https://fantasticmrdavid.com.au" target="_blank">fantasticmrdavid.com.au</Link>
       </Note>
     </FooterBar>
   </Container>

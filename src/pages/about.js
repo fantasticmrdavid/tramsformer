@@ -1,33 +1,26 @@
 import React from "react";
 import Layout from "components/layouts";
-import BlogHomeHead from "components/BlogHomeHead";
+import AboutContent from "components/AboutContent";
 import { graphql } from "gatsby";
 
 export const query = graphql`
   query AboutQuery {
-    prismicBloghome {
-      data {
-        description {
-          text
-        }
-        headline {
-          text
-        }
+    site {
+      siteMetadata {
+        title
+        description
       }
-      id
-      type
     }
   }
 `;
 
 const About = ({ data }) => {
   if (!data) return null;
-  const home = data.prismicBloghome.data;
+  const { site: siteMetadata } = data;
 
   return (
     <Layout>
-      <BlogHomeHead home={home} />
-      About page
+      <AboutContent siteMetadata={siteMetadata.siteMetadata} />
     </Layout>
   );
 };

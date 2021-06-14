@@ -4,9 +4,10 @@ import { Container as BarPattern } from "components/BarPattern/styles";
 export const Container = styled.div`
   a {
     color: var(--headingColor);
-    background-repeat: repeat-x;
-    background-size: 2px 2px;
-    background-position: 0 23px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 

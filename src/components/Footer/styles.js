@@ -4,6 +4,10 @@ import { Link } from "gatsby";
 
 export const Container = styled.div`
   position: relative;
+  
+  a:hover {
+    color: var(--headingColor);
+  }
 `;
 
 export const FooterBar = styled.div`
@@ -15,7 +19,7 @@ export const FooterBar = styled.div`
   width: 100%;
   background: black;
   padding: 1em;
-  margin-top: 1em;
+  margin-top: 2em;
   z-index: 2;
   color: white;
   font-size: 0.8rem;
@@ -40,10 +44,6 @@ export const NavItem = styled(Link)`
   color: white;
   margin-right: 2em;
   text-transform: uppercase;
-  
-  &:hover {
-    color: var(--headingColor);
-  }
 `;
 
 export const ContentEndContainer = styled.div`
