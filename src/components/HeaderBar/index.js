@@ -12,10 +12,10 @@ const navList = [
     label: "About",
     href: "/about",
   },
-  {
-    label: "Shop",
-    href: "/shop",
-  },
+  // {
+  //   label: "Shop",
+  //   href: "/shop",
+  // },
 ];
 
 export default () => {
