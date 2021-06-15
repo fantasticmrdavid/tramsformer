@@ -13,7 +13,7 @@ export default ({ posts }) => {
         <BarPattern direction="right" height={40} />
       </TitleContainer>
       {posts.map((post, i) => (
-        <PostSummary post={post} isFirst={i === 0} key={post.node.id} />
+        <PostSummary post={post} isFirst={i === 0} key={`postSummary_${post.node.id}`} />
       ))}
     </div>
   );

@@ -37,11 +37,18 @@ export default () => {
       >
         <Nav>
           <div>
-            { !isHome && <NavItem href="/">{"> PROJECT TRAMSFORMATION"}</NavItem> }
+            { !isHome && <NavItem to="/">{"> PROJECT TRAMSFORMATION"}</NavItem> }
           </div>
           <div>
             {
-              navList.map((i) => <NavItem href={i.href}>{i.label}</NavItem>)
+              navList.map((i) => (
+                <NavItem
+                  to={i.href}
+                  key={`headerNav_${i.href}`}
+                >
+                  {i.label}
+                </NavItem>
+              ))
             }
           </div>
         </Nav>

@@ -37,7 +37,14 @@ export default () => (
       <Nav>
         <div>
           {
-            navList.map((i) => <NavItem href={i.href}>{i.label}</NavItem>)
+            navList.map((i) => (
+              <NavItem
+                key={`footer_nav_${i.href}`}
+                to={i.href}
+              >
+                {i.label}
+              </NavItem>
+            ))
           }
         </div>
         <div>{`Copyright ${new Date().getFullYear()} Project Tramsformation`}</div>
@@ -51,7 +58,13 @@ export default () => (
       <Note>
         Website by
         {" "}
-        <Link href="https://fantasticmrdavid.com.au" target="_blank">fantasticmrdavid.com.au</Link>
+        <a
+          href="https://fantasticmrdavid.com.au"
+          target="_blank"
+          rel="noreferrer"
+        >
+          fantasticmrdavid.com.au
+        </a>
       </Note>
     </FooterBar>
   </Container>

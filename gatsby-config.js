@@ -25,13 +25,15 @@ const gastbySourcePrismicConfig = {
       post: postSchema,
     },
   },
-}
+};
 
 module.exports = {
   siteMetadata: {
     title: "Project Tramsformation",
-    description: "Blog for the Tramsformer",
-    author: "David Li"
+    description: "The development blog for Project Tramsformation",
+    author: "David Li",
+    url: "https://tramsformation.com.au",
+    image: "/images/seo_image.jpg",
   },
   plugins: [
     gastbySourcePrismicConfig,
