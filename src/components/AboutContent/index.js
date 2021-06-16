@@ -1,11 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
 import BarPattern from "components/BarPattern";
+import TerminalText from "components/TerminalText";
 import content from "./data";
 import {
   Container,
+  Contact,
   Content,
+  EmailAddress,
   Header,
   PatternContainer,
   TechStack,
@@ -47,8 +49,18 @@ export default ({ siteMetadata }) => (
         </div>
       </TechStack>
       <div>
-        <Link href="https://github.com/fantasticmrdavid/tramsformer" target="_blank">{"> Visit the Github repository"}</Link>
+        <a
+          href="https://github.com/fantasticmrdavid/tramsformer"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {"> Visit the Github repository"}
+        </a>
       </div>
+      <Contact>
+        {"Want to get in touch? Hit me up at: "}
+        <EmailAddress><TerminalText>fantasticmrdavid@gmail.com</TerminalText></EmailAddress>
+      </Contact>
     </Content>
   </Container>
 );

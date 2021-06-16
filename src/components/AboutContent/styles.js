@@ -8,6 +8,12 @@ export const Container = styled.div`
   margin-bottom: 2em;
 `;
 
+export const Contact = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+`;
+
 export const Content = styled.div`
   max-width: var(--maxContentWidth);
   width: 100%;
@@ -19,6 +25,11 @@ export const Content = styled.div`
       text-decoration: underline;
     }
   }
+`;
+
+export const EmailAddress = styled.span`
+  font-weight: 700;
+  margin-left: 0.5em;
 `;
 
 export const PatternContainer = styled.div`
