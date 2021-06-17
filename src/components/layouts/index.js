@@ -32,7 +32,7 @@ const Layout = ({ data, children }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title}</title>
-        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={SeoImage} />
         <link
           href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
