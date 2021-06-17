@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import BarPattern from "components/BarPattern";
 import {
   Container,

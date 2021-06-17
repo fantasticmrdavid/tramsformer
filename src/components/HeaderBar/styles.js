@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { media } from "../../styles/utils";
 
 export const Container = styled.div`
   position: relative;
@@ -25,9 +26,16 @@ export const NavItem = styled(Link)`
 export const Nav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: var(--maxContentWidth);
+  align-items: center;
+  max-width: var(--maxContentWidth);
+  width: 100%;
   text-transform: uppercase;
   color: white;
+  padding: 0 0.5em;
+
+  ${media.small`
+    padding: 0;
+  `}
   
   & > div:first-of-type {
     text-align: left;

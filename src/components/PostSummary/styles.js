@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { transparentize } from "polished";
 import theme from "styles/theme";
 import { Cursor } from "components/Blinker/styles";
+import { media } from "../../styles/utils";
 
 export const BracketLeft = styled.div`
   position: absolute;
@@ -56,10 +57,18 @@ export const Meta = styled.div`
   font-size: 14px;
   color: #9A9A9A;
   padding: 0.5em 1em;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   background-color: rgba(0, 0, 0, 0.05);
   transition: 0.3s;
+  text-align: center;
+  width: 100%;
+
+
+  ${media.small`
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    width: auto;
+    text-align: right;
+  `}
 `;
 
 export const Container = styled.div`
@@ -92,12 +101,17 @@ export const Container = styled.div`
   }
 
   h2 {
-    margin: 0;
+    margin: 1.5em 0 0.5em;
+    line-height: 1.5;
     font-size: 1.3rem;
     color: var(--headingColor);
     text-align: left;
     font-weight: 400;
     transition: 0.3s;
+
+    ${media.small`
+      margin: 0;
+    `}
     
     a {
       text-decoration: none;
@@ -113,8 +127,12 @@ export const Container = styled.div`
       border: ${`1px solid ${transparentize(0.7, theme.colorPostHeadingFirst)}`};
     
     & h2 {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       color: var(--postHeadingFirstColor);
+      
+      ${media.small`
+        font-size: 1.75rem;
+      `}
     }
     
       & ${Meta},

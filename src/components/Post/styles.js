@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container as BarPattern } from "components/BarPattern/styles";
+import { media } from "../../styles/utils";
 
 export const Container = styled.div`
   display: flex;
@@ -23,10 +24,15 @@ export const DateContainer = styled.div`
   width: 100%;
   margin: 2em 0;
   text-transform: uppercase;
+  overflow-x: hidden;
   
   > * {
     white-space: nowrap;
   }
+
+  ${media.small`
+    overflow-x: unset;
+  `}
   
   & ${BarPattern} {
     
@@ -53,10 +59,21 @@ export const DateContainer = styled.div`
 `;
 
 export const Nav = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: var(--maxContentWidth);
   margin-bottom: 2em;
+  padding: 0 1em;
+
+  ${media.small`
+    padding: 0;
+  `}
+
+  & a:last-of-type {
+    text-align: right;
+  }
 `;

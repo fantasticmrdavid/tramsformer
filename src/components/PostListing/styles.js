@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Container as BarPattern } from "components/BarPattern/styles";
+import { media } from "../../styles/utils";
 
 export const LatestPost = styled.div`
   text-transform: uppercase;
@@ -17,6 +18,11 @@ export const TitleContainer = styled.div`
   text-align: center;
   width: 100%;
   margin-bottom: 1.5em;
+  overflow-x: hidden;
+
+  ${media.small`
+    overflow-x: unset;
+  `}
   
   & ${BarPattern} {
     

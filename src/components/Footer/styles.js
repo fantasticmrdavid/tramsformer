@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Container as BarPattern } from "components/BarPattern/styles";
 import { Link } from "gatsby";
+import { media } from "../../styles/utils";
 
 export const Container = styled.div`
   position: relative;
@@ -26,18 +27,27 @@ export const FooterBar = styled.div`
 `;
 
 export const Nav = styled.nav`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
   width: var(--maxContentWidth);
+  max-width: 100%;
   
   & > div:first-of-type {
     text-align: left;
+    margin-bottom: 1em;
   }
-
-  & > div:last-of-type {
-    text-align: right;
-  }
+  
+  ${media.small`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    
+    & > div:first-of-type {
+      margin: 0;
+    }
+    
+    & > div:last-of-type {
+      text-align: right;
+    }
+  `};
 `;
 
 export const NavItem = styled(Link)`
