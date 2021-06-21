@@ -12,10 +12,11 @@ const navList = [
     label: "About",
     href: "/about",
   },
-  // {
-  //   label: "Shop",
-  //   href: "/shop",
-  // },
+  {
+    label: "Shop",
+    href: "https://www.etsy.com/au/shop/MelbourneMechaWorks",
+    isExternal: true,
+  },
 ];
 
 export default () => {
@@ -45,6 +46,7 @@ export default () => {
                 <NavItem
                   to={i.href}
                   key={`headerNav_${i.href}`}
+                  target={i.isExternal ? "_blank" : undefined}
                 >
                   {i.label}
                 </NavItem>

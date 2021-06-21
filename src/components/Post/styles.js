@@ -73,7 +73,7 @@ export const Nav = styled.div`
     padding: 0;
   `}
 
-  & a:last-of-type {
+  & *:last-child {
     text-align: right;
   }
 `;
