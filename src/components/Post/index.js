@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { Helmet } from "react-helmet";
 import { Date, RichText } from "prismic-reactjs";
 import BarPattern from "components/BarPattern";
-import Layout from "../layouts";
+import Layout from "components/Layout";
 import { ImageCaption, Quote, Text } from "../slices";
 import { Container, DateContainer, Nav } from "./styles";
 
