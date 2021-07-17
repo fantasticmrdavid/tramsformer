@@ -32,6 +32,11 @@ export const EmailAddress = styled.span`
   margin-left: 0.5em;
 `;
 
+export const ImageContainer = styled.div`
+  text-align: center;
+  padding-bottom: 2em;
+`;
+
 export const PatternContainer = styled.div`
   display: flex;
   justify-content: center;
