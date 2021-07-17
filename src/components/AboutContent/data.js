@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import aboutImage1 from "images/about_1.jpg";
 import aboutImage2 from "images/about_2.jpg";
-import { ImageContainer} from "./styles";
+import { ImageContainer } from "./styles";
 
 export default {
   aboutMain: (
@@ -15,7 +15,7 @@ export default {
         robotic, and growing up in the wonderful city that is Melbourne.`}
       </p>
       <ImageContainer>
-        <img src={aboutImage1} alt={"The Tramsformer converts from W-Class tram to robot"} />
+        <img src={aboutImage1} alt="The Tramsformer converts from W-Class tram to robot" />
       </ImageContainer>
       <p>
         {`The concept was originally started in 2008 as a failed entry into an art competition that 
@@ -24,7 +24,7 @@ export default {
         printed prototype, and then all over again in W-Class tram form. It's been a long road.`}
       </p>
       <ImageContainer>
-        <img src={aboutImage2} alt={"The project has had a long journey through various stages."} />
+        <img src={aboutImage2} alt="The project has had a long journey through various stages." />
       </ImageContainer>
       <p>
         {`This blog aims to journal some of the thoughts and ideas driving the development

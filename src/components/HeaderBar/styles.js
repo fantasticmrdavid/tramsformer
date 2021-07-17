@@ -14,12 +14,30 @@ export const Container = styled.div`
   z-index: 3;
 `;
 
+export const SubNavMenu = styled.div`
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  text-align: left;
+  padding: 0.5em 0;
+  width: 200px;
+  top: 30px;
+  right: 0px;
+  background-color: black;
+`;
+
 export const NavItem = styled(Link)`
+  position: relative;
   color: white;
   font-size: 14px;
+  padding: 0.5em 0;
   
   &:hover {
     color: var(--headingColor);
+    
+    & ${SubNavMenu} {
+      display: flex;
+    }
   }
 `;
 
