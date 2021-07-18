@@ -1,5 +1,6 @@
 import React from "react";
 import BarPattern from "components/BarPattern";
+import SocialIcons from "components/SocialIcons";
 import {
   Container,
   FooterBar,
@@ -8,6 +9,7 @@ import {
   Nav,
   NavItem,
   Note,
+  SocialIconsContainer,
 } from "./styles";
 
 const navList = [
@@ -19,10 +21,6 @@ const navList = [
     label: "About",
     href: "/about",
   },
-  // {
-  //   label: "Shop",
-  //   href: "/shop",
-  // },
 ];
 
 export default () => (
@@ -46,8 +44,13 @@ export default () => (
             ))
           }
         </div>
-        <div>{`Copyright ${new Date().getFullYear()} Project Tramsformation`}</div>
+        <div>
+          {`Copyright ${new Date().getFullYear()} Project Tramsformation`}
+        </div>
       </Nav>
+      <SocialIconsContainer>
+        <SocialIcons />
+      </SocialIconsContainer>
       <Note>
         Project Tramsformation acknowledges the Traditional Custodians of the lands on which this
         website and project was created, is hosted, and is viewed. This website was created on the

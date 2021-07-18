@@ -101,5 +101,11 @@ export const ContentEnd = styled.div`
 export const Note = styled.div`
   width: 100%;
   max-width: var(--maxContentWidth);
-  margin-top: 1em;
+  margin: 0.5em 0;
+`;
+
+export const SocialIconsContainer = styled.div`
+  width: 100%;
+  max-width: var(--maxContentWidth);
+  text-align: right;
 `;
