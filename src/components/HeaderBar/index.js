@@ -22,13 +22,13 @@ const navList = [
     children: [
       {
         id: 4,
-        label: "Toys & Figures",
+        label: "Buy the Tramsformer",
         href: "https://www.etsy.com/au/shop/MelbourneMechaWorks",
         isExternal: true,
       },
       {
         id: 5,
-        label: "T-Shirts & Apparel",
+        label: "Apparel & Merch",
         href: "https://www.redbubble.com/people/misterdavid/shop?artistUserName=misterdavid&collections=206830&iaCode=all-departments&sortOrder=relevant",
         isExternal: true,
       },
@@ -72,6 +72,7 @@ export default () => {
                             to={c.href}
                             key={`headerNav_${c.id}`}
                             target={c.isExternal ? "_blank" : undefined}
+                            rel="noopener noreferrer"
                           >
                             {c.label}
                           </NavItem>
@@ -84,6 +85,7 @@ export default () => {
                     to={i.href}
                     key={`headerNav_${i.id}`}
                     target={i.isExternal ? "_blank" : undefined}
+                    rel="noopener noreferrer"
                   >
                     {i.label}
                   </NavItem>

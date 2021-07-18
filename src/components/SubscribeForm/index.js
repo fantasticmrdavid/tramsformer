@@ -4,7 +4,13 @@ import toQueryString from "to-querystring";
 import Input from "antd/es/input";
 import Button from "antd/es/button";
 import displayMessage from "antd/es/message";
-import { Container, FormContainer } from "./styles";
+import {
+  BracketContainer,
+  BracketLeft,
+  BracketRight,
+  Container,
+  FormContainer,
+} from "./styles";
 
 const urlBase = "//gmail.us2.list-manage.com/subscribe/post?u=cc89c4d33a911046ebe0831ac&amp;id=173c9d191c";
 
@@ -64,6 +70,10 @@ export default () => {
 
   return (
     <Container>
+      <BracketContainer>
+        <BracketLeft />
+        <BracketRight />
+      </BracketContainer>
       <FormContainer>
         <Input
           type="email"

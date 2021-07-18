@@ -41,7 +41,7 @@ export const Header = styled.div`
 
 export const Background = styled.div`
   position: absolute;
-  bottom: 4em;
+  top: -9em;
   right: 0px;
   width: 100%;
   height: 100%;

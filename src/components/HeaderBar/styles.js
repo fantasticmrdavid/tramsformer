@@ -37,6 +37,7 @@ export const NavItem = styled(Link)`
     
     & ${SubNavMenu} {
       display: flex;
+      padding: 0 1em;
     }
   }
 `;
@@ -58,7 +59,7 @@ export const Nav = styled.nav`
   & > div:first-of-type {
     text-align: left;
     
-    & ${NavItem} {
+    & > ${NavItem} {
       margin-right: 2em;
     }
   }
@@ -66,7 +67,7 @@ export const Nav = styled.nav`
   & > div:last-of-type {
     text-align: right;
 
-    & ${NavItem} {
+    & > ${NavItem} {
       margin-left: 2em;
     }
   }
