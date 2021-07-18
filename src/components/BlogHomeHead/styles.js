@@ -7,6 +7,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 1em;
 
   .blog-description {
     color: #9A9A9A;

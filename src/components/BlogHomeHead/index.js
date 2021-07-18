@@ -3,6 +3,7 @@ import { RichText } from "prismic-reactjs";
 import Logo from "components/Logo";
 import BannerButtons from "components/BannerButtons";
 import SubscribeFrom from "components/SubscribeForm";
+import ProjectStatus from "components/ProjectStatus";
 import {
   Container,
   Content,
@@ -19,6 +20,7 @@ const BlogHomeHead = ({ home }) => (
         <p className="blog-description">{RichText.asText(home.description)}</p>
         <SubscribeFrom />
         <BannerButtons />
+        <ProjectStatus />
       </Header>
     </Content>
   </Container>
