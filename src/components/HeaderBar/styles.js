@@ -14,6 +14,16 @@ export const Container = styled.div`
   z-index: 3;
 `;
 
+export const LeftMenu = styled.div`
+  & > * {
+    display: none;
+
+    ${media.small`
+    display: block;
+  `}
+  }
+`;
+
 export const SubNavMenu = styled.div`
   display: none;
   position: absolute;
@@ -30,7 +40,6 @@ export const NavItem = styled(Link)`
   position: relative;
   color: white;
   font-size: 14px;
-  padding: 0.5em 0;
   
   &:hover {
     color: var(--headingColor);

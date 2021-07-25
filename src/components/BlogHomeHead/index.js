@@ -5,7 +5,6 @@ import BannerButtons from "components/BannerButtons";
 import SubscribeFrom from "components/SubscribeForm";
 import ProjectStatus from "components/ProjectStatus";
 import Loadable from "@loadable/component";
-
 import {
   Background,
   Container,

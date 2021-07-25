@@ -56,14 +56,13 @@ export const BracketRight = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  background-color: #efefef;
+  background-color: #e5e5e5;
   border: 1px solid #cdcdcd;
   padding: 1em;
   transition: 0.3s;
 
   &:hover,
-  &:focus-within
-  {
+  &:focus-within {
     background-color: #ffeccb;
     border-color: rgba(250, 173, 20, 0.4);
 

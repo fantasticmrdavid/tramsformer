@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import BackToTopButton from "components/BackToTopButton";
 import {
-  Container, NavItemExternal, Nav, NavItem, NoLinkNavItem, SubNavMenu,
+  Container,
+  LeftMenu,
+  NavItemExternal,
+  Nav,
+  NavItem,
+  NoLinkNavItem,
+  SubNavMenu,
 } from "./styles";
 
 const navList = [
@@ -54,9 +60,9 @@ export default () => {
         }
       >
         <Nav>
-          <div>
+          <LeftMenu>
             { !isHome && <NavItem to="/">{"> PROJECT TRAMSFORMATION"}</NavItem> }
-          </div>
+          </LeftMenu>
           <div>
             {
               navList.map((i) => (
