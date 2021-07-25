@@ -3,6 +3,14 @@ import { fadeIn } from "../../styles/animations";
 import { media } from "../../styles/utils";
 import MastheadBackground from "../../images/masthead_tfw.png";
 
+export const Background = styled.div`
+  position: absolute;
+  top: -2em;
+  left: 0;
+  width: 100%;
+  height: 215px;
+`;
+
 export const Container = styled.div`
   position: relative;
   display: flex;
@@ -40,7 +48,7 @@ export const Header = styled.div`
   z-index: 1;
 `;
 
-export const Background = styled.div`
+export const HeroImage = styled.div`
   position: absolute;
   top: -9em;
   right: 0px;

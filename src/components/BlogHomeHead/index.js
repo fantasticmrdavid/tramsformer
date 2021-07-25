@@ -5,16 +5,18 @@ import BannerButtons from "components/BannerButtons";
 import SubscribeFrom from "components/SubscribeForm";
 import ProjectStatus from "components/ProjectStatus";
 import {
+  Background,
   Container,
   Content,
-  Background,
   Header,
+  HeroImage,
 } from "./styles";
 
 const BlogHomeHead = ({ home }) => (
   <Container data-wio-id={home ? home.id : undefined}>
+    <Background />
     <Content>
-      <Background />
+      <HeroImage />
       <Header>
         <Logo pretitle={RichText.asText(home.headline)} title="TFW" />
         <p className="blog-description">{RichText.asText(home.description)}</p>

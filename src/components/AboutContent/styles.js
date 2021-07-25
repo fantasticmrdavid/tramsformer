@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Container as BarPattern } from "components/BarPattern/styles";
+import { fadeIn } from "styles/animations";
 
 export const Container = styled.div`
   display: flex;
@@ -35,6 +36,11 @@ export const EmailAddress = styled.span`
 export const ImageContainer = styled.div`
   text-align: center;
   padding-bottom: 2em;
+  
+  img {
+    animation: ${css`${fadeIn} 1s ease 1`};
+    animation-fill-mode: forwards;
+  }
 `;
 
 export const PatternContainer = styled.div`

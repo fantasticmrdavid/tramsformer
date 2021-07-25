@@ -1,7 +1,7 @@
-const path = require('path')
+const path = require("path");
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   const pages = await graphql(`
     {
@@ -15,13 +15,13 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   pages.data.allPrismicPost.nodes.forEach((page) => {
     createPage({
       path: page.url,
-      component: path.resolve(__dirname, 'src/templates/post.js'),
+      component: path.resolve(__dirname, "src/templates/post.js"),
       context: { ...page },
-    })
-  })
-}
+    });
+  });
+};
