@@ -23,8 +23,8 @@ const socialLinkList = [
 export default () => (
   <Container>
     {
-      socialLinkList.map((i) => (
-        <a title={i.title} href={i.href} target="_blank" rel="noopener noreferrer">
+      socialLinkList.map((i, index) => (
+        <a key={`socialIcon_${index.toString()}`} title={i.title} href={i.href} target="_blank" rel="noopener noreferrer">
           {i.icon}
         </a>
       ))

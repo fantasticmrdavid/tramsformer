@@ -9,7 +9,7 @@ export default {
     <>
       <p>
         {"Project Tramsformation is a passion project by "}
-        <Link href="https://fantasticmrdavid.com.au" target="_blank">David Li</Link>
+        <a href="https://fantasticmrdavid.com.au" target="_blank" rel="noopener noreferrer">David Li</a>
         {` created during Melbourne’s 2020 COVID-19 lockdown. It is the culmination of 
         years of development fueled by a love for all things transforming and 
         robotic, and growing up in the wonderful city that is Melbourne.`}

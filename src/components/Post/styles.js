@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Container as BarPattern } from "components/BarPattern/styles";
-import { media } from "../../styles/utils";
+import { media } from "styles/utils";
+import { fadeIn } from "styles/animations";
 
 export const Container = styled.div`
   display: flex;
@@ -12,6 +13,11 @@ export const Container = styled.div`
     &:hover {
       text-decoration: underline;
     }
+  }
+  
+  img {
+    animation: ${css`${fadeIn} 1s ease 1`};
+    animation-fill-mode: forwards;
   }
 `;
 

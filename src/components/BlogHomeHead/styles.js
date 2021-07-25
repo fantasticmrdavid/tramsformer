@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { fadeIn } from "../../styles/animations";
-import { media } from "../../styles/utils";
-import MastheadBackground from "../../images/masthead_tfw.png";
+import { fadeIn } from "styles/animations";
+import { media } from "styles/utils";
+import MastheadBackground from "images/masthead_tfw.png";
 
 export const Background = styled.div`
   position: absolute;
@@ -9,6 +9,20 @@ export const Background = styled.div`
   left: 0;
   width: 100%;
   height: 215px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  animation: ${css`${fadeIn} 1s ease 1`};
+  animation-fill-mode: forwards;
+
+  svg {
+    animation: ${css`${fadeIn} 1s ease 1`};
+    animation-fill-mode: forwards;
+    fill: rgba(0, 0, 0, 0.35);
+    
+    path {
+      opacity: 0.1;
+    }
+  }
 `;
 
 export const Container = styled.div`
@@ -16,6 +30,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1em;
+  text-shadow: -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
 
   .blog-description {
     color: #9A9A9A;

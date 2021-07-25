@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import BackToTopButton from "components/BackToTopButton";
 import {
-  Container, Nav, NavItem, SubNavMenu,
+  Container, NavItemExternal, Nav, NavItem, NoLinkNavItem, SubNavMenu,
 } from "./styles";
 
 const navList = [
@@ -61,25 +61,36 @@ export default () => {
             {
               navList.map((i) => (
                 i.children ? (
-                  <NavItem
+                  <NoLinkNavItem
                     key={`headerNav_${i.id}`}
                   >
                     {i.label}
                     <SubNavMenu>
                       {
                         i.children.map((c) => (
-                          <NavItem
-                            to={c.href}
-                            key={`headerNav_${c.id}`}
-                            target={c.isExternal ? "_blank" : undefined}
-                            rel="noopener noreferrer"
-                          >
-                            {c.label}
-                          </NavItem>
+                          c.isExternal ? (
+                            <NavItemExternal
+                              href={c.href}
+                              key={`headerNav_${c.id}`}
+                              target={c.isExternal ? "_blank" : undefined}
+                              rel="noopener noreferrer"
+                            >
+                              {c.label}
+                            </NavItemExternal>
+                          ) : (
+                            <NavItem
+                              href={c.href}
+                              key={`headerNav_${c.id}`}
+                              target={c.isExternal ? "_blank" : undefined}
+                              rel="noopener noreferrer"
+                            >
+                              {c.label}
+                            </NavItem>
+                          )
                         ))
                       }
                     </SubNavMenu>
-                  </NavItem>
+                  </NoLinkNavItem>
                 ) : (
                   <NavItem
                     to={i.href}

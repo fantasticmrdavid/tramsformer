@@ -42,6 +42,39 @@ export const NavItem = styled(Link)`
   }
 `;
 
+export const NavItemExternal = styled.a`
+  position: relative;
+  color: white;
+  font-size: 14px;
+  padding: 0.5em 0;
+
+  &:hover {
+    color: var(--headingColor);
+
+    & ${SubNavMenu} {
+      display: flex;
+      padding: 0 1em;
+    }
+  }
+`;
+
+export const NoLinkNavItem = styled.span`
+  position: relative;
+  color: white;
+  font-size: 14px;
+  padding: 0.5em 0;
+  margin-left: 2em;
+  
+  &:hover {
+    color: var(--headingColor);
+    
+    & ${SubNavMenu} {
+      display: flex;
+      padding: 0 1em;
+    }
+  }
+`;
+
 export const Nav = styled.nav`
   display: grid;
   grid-template-columns: 1fr 1fr;
