@@ -20,7 +20,7 @@ const BlogHomeHead = ({ home }) => {
       <Background>
         <Trianglify
           width={2000}
-          height={1000}
+          height={215}
           variance={1}
           strokeWidth={1}
           fill={false}

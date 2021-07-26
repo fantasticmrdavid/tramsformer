@@ -4,8 +4,11 @@ import { Helmet } from "react-helmet";
 import { Date, RichText } from "prismic-reactjs";
 import BarPattern from "components/BarPattern";
 import Layout from "components/Layout";
+import Loadable from "@loadable/component";
 import { ImageCaption, Quote, Text } from "../slices";
-import { Container, DateContainer, Nav } from "./styles";
+import {
+  Background, Container, DateContainer, Gradient, Nav,
+} from "./styles";
 
 // Sort and display the different slice options
 const PostSlices = ({ slices }) => slices.map((slice, index) => {
@@ -61,11 +64,25 @@ const PostBody = (props) => {
   const prevTitle = prevPost ? RichText.asText(prevPost.node.data.title.raw) : undefined;
   const nextTitle = nextPost ? RichText.asText(nextPost.node.data.title.raw) : undefined;
 
+  const Trianglify = Loadable(() => import("@planningcenter/react-trianglify"));
+
   return (
     <Container>
       <Helmet>
         <title>{`${postTitle} | ${site.siteMetadata.title}`}</title>
       </Helmet>
+      <Background>
+        <Trianglify
+          width={2000}
+          height={250}
+          variance={1}
+          strokeWidth={1}
+          fill={false}
+          xColors={["#000"]}
+          yColors={["#000"]}
+        />
+        <Gradient />
+      </Background>
       <div className="container post-header">
         <h1>{`> ${postTitle}`}</h1>
         <DateContainer className="date">

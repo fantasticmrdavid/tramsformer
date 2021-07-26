@@ -63,7 +63,7 @@ export const Header = styled.div`
 
 export const HeroImage = styled.div`
   position: absolute;
-  top: -9em;
+  top: -10em;
   right: 0px;
   width: 100%;
   height: 100%;

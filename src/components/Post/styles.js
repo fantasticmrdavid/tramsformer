@@ -3,12 +3,41 @@ import { Container as BarPattern } from "components/BarPattern/styles";
 import { media } from "styles/utils";
 import { fadeIn } from "styles/animations";
 
+export const Background = styled.div`
+  position: absolute;
+  top: -2em;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+  svg {
+    fill: rgba(0, 0, 0, 0.35);
+    path {
+      opacity: 0.1;
+    }
+  }
+`;
+
+export const Gradient = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #FFF;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 100%);
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 2;
+  
+  h1 {
+    text-shadow: -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
+  }
   
   a {
     color: var(--headingColor);

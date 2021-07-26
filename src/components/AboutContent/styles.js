@@ -3,6 +3,31 @@ import { Container as BarPattern } from "components/BarPattern/styles";
 import { fadeIn } from "styles/animations";
 import { media } from "styles/utils";
 
+export const Background = styled.div`
+  position: absolute;
+  top: -2em;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+  svg {
+    fill: rgba(0, 0, 0, 0.35);
+    path {
+      opacity: 0.15;
+    }
+  }
+`;
+
+export const Gradient = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #FFF;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -21,8 +46,13 @@ export const Contact = styled.div`
 `;
 
 export const Content = styled.div`
+  position: relative;
   max-width: var(--maxContentWidth);
   width: 100%;
+
+  h1 {
+    text-shadow: -2px -2px 0 #FFF, 2px -2px 0 #FFF, -2px 2px 0 #FFF, 2px 2px 0 #FFF;
+  }
   
   a {
     color: var(--headingColor);
