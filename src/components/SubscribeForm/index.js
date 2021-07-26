@@ -77,7 +77,7 @@ export default () => {
       <FormContainer>
         <Input
           type="email"
-          placeholder="Email"
+          placeholder="Enter your email to get the latest updates"
           value={email}
           onChange={(e) => setState({
             ...state,

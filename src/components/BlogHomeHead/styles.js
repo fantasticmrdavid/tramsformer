@@ -11,8 +11,6 @@ export const Background = styled.div`
   height: 215px;
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  animation: ${css`${fadeIn} 1s ease 1`};
-  animation-fill-mode: forwards;
 
   svg {
     animation: ${css`${fadeIn} 1s ease 1`};
