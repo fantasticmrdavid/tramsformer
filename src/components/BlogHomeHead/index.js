@@ -2,7 +2,6 @@ import React from "react";
 import { RichText } from "prismic-reactjs";
 import Logo from "components/Logo";
 import BannerButtons from "components/BannerButtons";
-import BackgroundSweeper from "components/BackgroundSweeper";
 import ProjectStatus from "components/ProjectStatus";
 import SubscribeFrom from "components/SubscribeForm";
 import Loadable from "@loadable/component";
@@ -19,17 +18,15 @@ const BlogHomeHead = ({ home }) => {
   return (
     <Container data-wio-id={home ? home.id : undefined}>
       <Background>
-        <BackgroundSweeper>
-          <Trianglify
-            width={2000}
-            height={1000}
-            variance={1}
-            strokeWidth={1}
-            fill={false}
-            xColors={["#000"]}
-            yColors={["#000"]}
-          />
-        </BackgroundSweeper>
+        <Trianglify
+          width={2000}
+          height={1000}
+          variance={1}
+          strokeWidth={1}
+          fill={false}
+          xColors={["#000"]}
+          yColors={["#000"]}
+        />
       </Background>
       <Content>
         <HeroImage />

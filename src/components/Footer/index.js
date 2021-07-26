@@ -1,11 +1,9 @@
 import React from "react";
-import BarPattern from "components/BarPattern";
 import SocialIcons from "components/SocialIcons";
 import {
+  ContentEndBackground,
   Container,
   FooterBar,
-  ContentEnd,
-  ContentEndContainer,
   Nav,
   NavItem,
   Note,
@@ -25,11 +23,7 @@ const navList = [
 
 export default () => (
   <Container>
-    <ContentEndContainer>
-      <BarPattern direction="left" height={60} />
-      <ContentEnd>End of the Line</ContentEnd>
-      <BarPattern direction="right" height={60} />
-    </ContentEndContainer>
+    <ContentEndBackground />
     <FooterBar>
       <Nav>
         <div>

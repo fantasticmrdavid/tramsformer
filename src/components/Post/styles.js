@@ -7,6 +7,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 2;
+  
   a {
     color: var(--headingColor);
 
@@ -18,6 +21,10 @@ export const Container = styled.div`
   img {
     animation: ${css`${fadeIn} 1s ease 1`};
     animation-fill-mode: forwards;
+  }
+  
+  .homepage-slice-wrapper {
+    width: 100%;
   }
 `;
 

@@ -67,9 +67,6 @@ const PostBody = (props) => {
         <title>{`${postTitle} | ${site.siteMetadata.title}`}</title>
       </Helmet>
       <div className="container post-header">
-        <div className="back">
-          <Link to="/">back to list</Link>
-        </div>
         <h1>{`> ${postTitle}`}</h1>
         <DateContainer className="date">
           <BarPattern direction="left" height={30} count={7} />

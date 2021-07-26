@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import HeaderBar from "components/HeaderBar";
 import Footer from "components/Footer";
-import SeoImage from "../../images/seo_image.jpg";
+import SeoImage from "images/seo_image.jpg";
 import "../../stylesheets/main.scss";
 
 export default (props) => (

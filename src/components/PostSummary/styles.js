@@ -76,7 +76,7 @@ export const Container = styled.div`
   margin-bottom: 1em;
   padding: 1em;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: rgb(250, 250, 250);
   transition: 0.3s;
   opacity: 0.8;
 

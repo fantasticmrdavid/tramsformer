@@ -25,6 +25,8 @@ body {
   max-width: var(--maxContentWidth);
   width: 100%;
   margin: auto;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: $max-width-sm) {
     padding: 0 20px;

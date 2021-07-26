@@ -21,10 +21,11 @@
     font-style: italic;
     font-size: 14px;
     color: #949494;
+    margin-top: 0.5em;
   }
 }
 
-// Full Width Image 
+// Full Width Image
 .full-width-image {
   height: 400px;
   position: relative;
@@ -58,6 +59,7 @@
     font-size: 40px;
     font-weight: 900;
     color: #FFFFFF;
+    margin-top: 0.5em;
 
     @media (max-width: $max-width-sm) {
       font-size: 25px;

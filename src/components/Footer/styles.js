@@ -1,10 +1,28 @@
 import styled from "styled-components";
-import { Container as BarPattern } from "components/BarPattern/styles";
 import { Link } from "gatsby";
-import { media } from "../../styles/utils";
+import CityscapeBackground from "images/melbourne_city_line.png";
+import { media } from "styles/utils";
+
+export const ContentEndBackground = styled.div`
+  position: absolute;
+  display: none;
+  top: -205px;
+  width: 100%;
+  height: 100%;
+  background: url(${CityscapeBackground}) bottom center no-repeat;
+  
+  ${media.small`
+    display: block;
+  `}
+`;
 
 export const Container = styled.div`
   position: relative;
+  margin-top: 0;
+
+  ${media.small`
+    margin-top: 13em;
+  `}
   
   a:hover {
     color: var(--headingColor);
@@ -19,7 +37,7 @@ export const FooterBar = styled.div`
   align-items: center;
   width: 100%;
   background: black;
-  padding: 1em;
+  padding: 2em 1em;
   margin-top: 2em;
   z-index: 2;
   color: white;
@@ -54,48 +72,6 @@ export const NavItem = styled(Link)`
   color: white;
   margin-right: 2em;
   text-transform: uppercase;
-`;
-
-export const ContentEndContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  text-align: center;
-  width: 100%;
-  overflow-x: hidden;
-  
-  & ${BarPattern} {
-    bottom: 70px;
-    
-    &:first-of-type {
-      left: 0px;
-      transform: skew(15deg, 0);
-      flex-direction: row-reverse;
-      
-      & > * {
-        margin-right: 15px;
-      }
-    }
-
-    &:last-of-type {
-      right: 0px;
-      transform: skew(-15deg, 0);
-      text-align: left;
-
-      & > * {
-        margin-left: 15px;
-      }
-    }
-  }
-`;
-
-export const ContentEnd = styled.div`
-  text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const Note = styled.div`
