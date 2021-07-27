@@ -71,6 +71,36 @@ export const Meta = styled.div`
   `}
 `;
 
+export const RouteLine = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  left: 0;
+  bottom: -18px;
+  height: 17px;
+  width: 100%;
+  
+  &:after {
+    content: "";
+    position: relative;
+    width: 21px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.05);
+  }
+`;
+
+export const Circle = styled.div`
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 1;
+  width: 7px;
+  height: 7px;
+  left: 14px;
+  top: 5px;
+`;
+
 export const Container = styled.div`
   position: relative;
   margin-bottom: 1em;
@@ -79,6 +109,12 @@ export const Container = styled.div`
   background-color: rgb(250, 250, 250);
   transition: 0.3s;
   opacity: 0.8;
+  
+  &:last-of-type {
+    ${RouteLine} {
+      display: none;
+    }
+  }
 
   &:hover {
     opacity: 1;

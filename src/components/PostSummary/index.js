@@ -4,7 +4,12 @@ import { Link } from "gatsby";
 import Blinker from "components/Blinker";
 import BorderTracer from "components/BorderTracer";
 import {
-  Container, Meta, BracketLeft, BracketRight,
+  Circle,
+  Container,
+  Meta,
+  BracketLeft,
+  BracketRight,
+  RouteLine,
 } from "./styles";
 
 // Function to retrieve a small preview of the post's text
@@ -70,6 +75,9 @@ const PostSummary = ({ post, id, isFirst }) => {
         {/* Renders a small preview of the post's text */}
         {firstParagraph(post.node.data)}
       </Link>
+      <RouteLine>
+        <Circle />
+      </RouteLine>
     </Container>
   );
 };
