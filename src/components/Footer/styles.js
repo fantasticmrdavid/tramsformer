@@ -6,7 +6,7 @@ import { media } from "styles/utils";
 export const ContentEndBackground = styled.div`
   position: absolute;
   display: none;
-  top: -205px;
+  top: -260px;
   width: 100%;
   height: 100%;
   background: url(${CityscapeBackground}) bottom center no-repeat;
@@ -21,7 +21,7 @@ export const Container = styled.div`
   margin-top: 0;
 
   ${media.small`
-    margin-top: 13em;
+    margin-top: 16.5em;
   `}
   
   a:hover {
@@ -45,32 +45,14 @@ export const FooterBar = styled.div`
 `;
 
 export const Nav = styled.nav`
-  width: var(--maxContentWidth);
-  max-width: 100%;
-  
-  & > div:first-of-type {
-    text-align: left;
-    margin-bottom: 1em;
-  }
-  
-  ${media.small`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    
-    & > div:first-of-type {
-      margin: 0;
-    }
-    
-    & > div:last-of-type {
-      text-align: right;
-    }
-  `};
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
 `;
 
 export const NavItem = styled(Link)`
   color: white;
-  margin-right: 2em;
+  margin-left: 2em;
   text-transform: uppercase;
 `;
 
@@ -80,8 +62,30 @@ export const Note = styled.div`
   margin: 0.5em 0;
 `;
 
+export const LogoWrapper = styled.div`
+  color: white;
+  padding-top: 0.35em;
+`;
+
 export const SocialIconsContainer = styled.div`
   width: 100%;
   max-width: var(--maxContentWidth);
   text-align: right;
+`;
+
+export const SplitRow = styled.div`
+  display: grid;
+  width: var(--maxContentWidth);
+  max-width: 100%;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  
+  & > *:last-child {
+    text-align: right;
+  }
+`;
+
+export const RowRight = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
