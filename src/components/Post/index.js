@@ -59,10 +59,10 @@ const PostBody = (props) => {
     }).format(postDate)
     : "";
 
-  const postTitle = RichText.asText(blogPost.title.raw).length !== 0
-    ? RichText.asText(blogPost.title.raw) : "Untitled";
-  const prevTitle = prevPost ? RichText.asText(prevPost.node.data.title.raw) : undefined;
-  const nextTitle = nextPost ? RichText.asText(nextPost.node.data.title.raw) : undefined;
+  const postTitle = RichText.asText(blogPost.title.richText).length !== 0
+    ? RichText.asText(blogPost.title.richText) : "Untitled";
+  const prevTitle = prevPost ? RichText.asText(prevPost.node.data.title.richText) : undefined;
+  const nextTitle = nextPost ? RichText.asText(nextPost.node.data.title.richText) : undefined;
 
   const Trianglify = Loadable(() => import("@planningcenter/react-trianglify"));
 

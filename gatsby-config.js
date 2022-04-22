@@ -9,23 +9,23 @@ const reponame = process.env.PRISMIC_REPO_NAME || prismicRepo;
 const apiKey = process.env.PRISMIC_API_KEY || accessToken;
 const prismicReleaseID = process.env.PRISMIC_RELEASE_ID || releaseID;
 
-const blogHomeSchema = require("./custom_types/bloghome.json");
-const postSchema = require("./custom_types/post.json");
-
-const gastbySourcePrismicConfig = {
+const gatsbySourcePrismicConfig = {
   resolve: "gatsby-source-prismic",
   options: {
     repositoryName: reponame,
     accessToken: apiKey,
     releaseID: prismicReleaseID,
-    prismicToolbar: true,
-    linkResolver: () => (doc) => linkResolver(doc),
-    schemas: {
-      blogHome: blogHomeSchema,
-      post: postSchema,
-    },
+    linkResolver: (doc) => linkResolver(doc),
+    customTypesApiToken:  process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
   },
 };
+
+const gatsbySourcePreviewConfig = {
+  resolve: "gatsby-plugin-prismic-previews",
+  options: {
+    repositoryName: reponame
+  }
+}
 
 module.exports = {
   siteMetadata: {
@@ -36,10 +36,12 @@ module.exports = {
     image: "/images/seo_image.jpg",
   },
   plugins: [
-    gastbySourcePrismicConfig,
+    gatsbySourcePrismicConfig,
+    gatsbySourcePreviewConfig,
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
     "gatsby-alias-imports",
     "gatsby-plugin-minify",
     {

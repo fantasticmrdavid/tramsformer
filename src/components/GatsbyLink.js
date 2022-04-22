@@ -5,9 +5,10 @@ import { Link } from "gatsby";
 import linkResolver from "../utils/linkResolver";
 
 const GatsbyLink = (type, element, content, children, index) => {
-  if (element.data.link_type === "Document") {
+  const { data } = element;
+  if (data.link_type === "Document") {
     return (
-      <Link to={linkResolver(element.data)} key={element.data.id}>
+      <Link to={linkResolver(data)} key={data.id}>
         {content}
       </Link>
     );

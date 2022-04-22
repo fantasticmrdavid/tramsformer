@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { withPreview } from "gatsby-source-prismic";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import Post from "components/Post";
 
 // Query for the Blog Post content in Prismic
@@ -20,7 +20,7 @@ export const query = graphql`
           type
           data {
             title {
-              raw
+              richText
             }
           }
         }
@@ -35,28 +35,28 @@ export const query = graphql`
       data {
         date
         title {
-          raw
+          richText
         }
         body {
-          ... on PrismicPostBodyText {
+          ... on PrismicPostDataBodyText {
             slice_label
             slice_type
             primary {
               text {
-                raw
+                richText
               }
             }
           }
-          ... on PrismicPostBodyQuote {
+          ... on PrismicPostDataBodyQuote {
             slice_label
             slice_type
             primary {
               quote {
-                raw
+                richText
               }
             }
           }
-          ... on PrismicPostBodyImageWithCaption {
+          ... on PrismicPostDataBodyImageWithCaption {
             id
             slice_label
             slice_type
@@ -66,7 +66,7 @@ export const query = graphql`
                 url
               }
               caption {
-                raw
+                richText
               }
             }
           }
@@ -75,5 +75,4 @@ export const query = graphql`
     }
   }
 `;
-
-export default withPreview(Post);
+export default withPrismicPreview(Post);

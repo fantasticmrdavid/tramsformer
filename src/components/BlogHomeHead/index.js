@@ -1,5 +1,4 @@
 import React from "react";
-import { RichText } from "prismic-reactjs";
 import Logo from "components/Logo";
 import BannerButtons from "components/BannerButtons";
 import ProjectStatus from "components/ProjectStatus";
@@ -31,8 +30,8 @@ const BlogHomeHead = ({ home }) => {
       <Content>
         <HeroImage />
         <Header>
-          <Logo pretitle={RichText.asText(home.headline)} title="TFW" />
-          <p className="blog-description">{RichText.asText(home.description)}</p>
+          <Logo pretitle={home.headline.text} title="TFW" />
+          <p className="blog-description">{home.description.text}</p>
           <SubscribeFrom />
           <BannerButtons />
           <ProjectStatus />

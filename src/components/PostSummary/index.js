@@ -19,7 +19,7 @@ const firstParagraph = (post) => {
   if (firstTextSlice != null) {
     // Set the character limit for the text we'll show in the homepage
     const textLimit = 300;
-    const text = RichText.asText(firstTextSlice.primary.text.raw);
+    const text = RichText.asText(firstTextSlice.primary.text.richText);
     const limitedText = text.substring(0, textLimit);
 
     if (text.length > textLimit) {
@@ -62,8 +62,8 @@ const PostSummary = ({ post, id, isFirst }) => {
           )
         }
         <h2>
-          {`> ${RichText.asText(post.node.data.title.raw).length !== 0
-            ? RichText.asText(post.node.data.title.raw)
+          {`> ${RichText.asText(post.node.data.title.richText).length !== 0
+            ? RichText.asText(post.node.data.title.richText)
             : defaultTitle}`}
           {
             isFirst && <Blinker />

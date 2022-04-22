@@ -1,5 +1,8 @@
 import React from "react";
-import { withUnpublishedPreview } from "gatsby-source-prismic";
+import {
+  withPrismicUnpublishedPreview,
+  componentResolverFromMap,
+} from "gatsby-plugin-prismic-previews";
 import { Post } from "../components/Post";
 import Homepage from "./homepage";
 
@@ -15,11 +18,13 @@ const Page404 = () => (
   </div>
 );
 
-export default withUnpublishedPreview(Page404, {
-  templateMap: {
-    post: Post,
-    homepage: Homepage,
-    prismicPost: Post,
-    prismicHomepage: Homepage,
+export default withPrismicUnpublishedPreview(Page404, [
+  {
+    componentResolver: componentResolverFromMap({
+      post: Post,
+      homepage: Homepage,
+      prismicPost: Post,
+      prismicHomepage: Homepage,
+    }),
   },
-});
+]);

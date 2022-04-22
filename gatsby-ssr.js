@@ -1,5 +1,5 @@
 import React from "react";
-import { PreviewStoreProvider } from "gatsby-source-prismic";
+import { PrismicPreviewProvider } from 'gatsby-plugin-prismic-previews'
 import { Helmet } from "react-helmet";
 
 export const onRenderBody = (
@@ -35,5 +35,5 @@ export const onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) =>
 }
 
 export const wrapRootElement = ({ element }) => (
-  <PreviewStoreProvider initialEnabled>{element}</PreviewStoreProvider>
+  <PrismicPreviewProvider initialEnabled>{element}</PrismicPreviewProvider>
 );

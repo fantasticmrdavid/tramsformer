@@ -6,7 +6,7 @@ export default ({ slice }) => (
   <div className="post-text container">
     <div>
       <RichText
-        render={slice.primary.text.raw || []}
+        render={slice.primary.text.richText || []}
         serializeHyperlink={GatsbyLink}
       />
     </div>

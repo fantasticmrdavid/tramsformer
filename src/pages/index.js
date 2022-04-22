@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { withPreview } from "gatsby-source-prismic";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import "antd/dist/antd.css";
 import Homepage from "./homepage";
 
@@ -27,17 +27,17 @@ export const query = graphql`
           type
           data {
             title {
-              raw
+              richText
             }
             date
             body {
-              ... on PrismicPostBodyText {
+              ... on PrismicPostDataBodyText {
                 id
                 slice_label
                 slice_type
                 primary {
                   text {
-                    raw
+                    richText
                   }
                 }
               }
@@ -48,5 +48,4 @@ export const query = graphql`
     }
   }
 `;
-
-export default withPreview(Homepage);
+export default withPrismicPreview(Homepage);

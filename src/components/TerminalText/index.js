@@ -58,7 +58,7 @@ class TerminalText extends PureComponent {
             {currentLine}
             <br />
           </>
-        ) : <>{text}</>,
+        ) : text,
         currentLine: nextChar === "\n" ? "" : `${currentLine}${nextChar}`,
         index: index + 1,
       });
