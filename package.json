@@ -77,5 +77,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fantasticmrdavid/tramsformer"
+  },
+  "pkg": {
+    "assets": "node_modules/canvas/**/*"
   }
 }
