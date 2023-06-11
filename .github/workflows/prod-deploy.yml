@@ -18,7 +18,7 @@ jobs:
           node-version: 18
 
       - name: Install canvas dependencies
-        run: npm install pkg-config cairo pango libpng jpeg giflib
+        run: npm install -g node-gyp; npm install pkg-config cairo pango jpeg
 
       - name: Install dependencies
         run: yarn install
