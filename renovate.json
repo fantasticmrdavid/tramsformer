@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "extends": "monorepo:gatsby",
+      "groupName": "gatsby monorepo",
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor"
+      ]
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    }
+  ]
+}
