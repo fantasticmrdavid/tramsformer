@@ -61,7 +61,7 @@
   },
   "overrides": {
     "webpack": "^5.0.0",
-    "canvas": "2.9.1"
+    "node-sass": "https://registry.npmjs.org/node-sass/-/node-sass-7.0.0.tgz"
   },
   "keywords": [
     "gatsby"
@@ -78,8 +78,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fantasticmrdavid/tramsformer"
-  },
-  "pkg": {
-    "assets": "node_modules/canvas/**/*"
   }
 }
