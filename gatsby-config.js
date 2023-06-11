@@ -16,7 +16,7 @@ const gatsbySourcePrismicConfig = {
     accessToken: apiKey,
     releaseID: prismicReleaseID,
     linkResolver: (doc) => linkResolver(doc),
-    customTypesApiToken:  process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+    customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
   },
 };
 
