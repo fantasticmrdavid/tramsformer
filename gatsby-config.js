@@ -23,9 +23,9 @@ const gatsbySourcePrismicConfig = {
 const gatsbySourcePreviewConfig = {
   resolve: "gatsby-plugin-prismic-previews",
   options: {
-    repositoryName: reponame
-  }
-}
+    repositoryName: reponame,
+  },
+};
 
 module.exports = {
   siteMetadata: {
