@@ -18,5 +18,4 @@ brought it to where it is today.
 
 ### Deployment
 - Github
-- Codeship
 - AWS
