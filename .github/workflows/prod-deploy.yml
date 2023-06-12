@@ -18,7 +18,7 @@ jobs:
           node-version: 18
 
       - name: Install canvas dependencies
-        run: sudo apt-get install libcairo2-dev libjpeg-dev libgif-dev libpangocairo
+        run: sudo apt-get install libcairo2-dev libjpeg-dev libgif-dev libpangocairo-1.0-0
 
       - name: Install dependencies
         run: yarn install
