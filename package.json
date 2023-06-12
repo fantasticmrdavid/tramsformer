@@ -68,7 +68,7 @@
     "start": "npm run clean && npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint-src-fix": "eslint -c .eslintrc.json --ext ts,js,tsx,jsx --fix src --color"
+    "lint": "eslint -c .eslintrc.json --ext ts,js,tsx,jsx --fix src --color"
   },
   "resolutions": {
     "camel-case": "^4.1.2",
