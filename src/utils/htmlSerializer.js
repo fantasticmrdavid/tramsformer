@@ -38,7 +38,6 @@ const htmlSerializer = (type, element, content, children, index) => {
       <img
         src={element.url}
         alt={element.alt || ""}
-        copyright={element.copyright || ""}
       />
     );
 
