@@ -1,6 +1,8 @@
 import { graphql } from "gatsby";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
-import "antd/dist/antd.css";
+
+// import "antd/dist/antd.css";
+
 import Homepage from "./homepage";
 
 // Query for the Blog Home content in Prismic
