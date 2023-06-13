@@ -61,7 +61,6 @@ export default ({ siteMetadata }) => {
           <div>
             <h3>Deployment</h3>
             <li>Github</li>
-            <li>Codeship</li>
             <li>AWS</li>
           </div>
         </TechStack>

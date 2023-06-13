@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import aboutImage1 from "images/about_1.jpg";
 import aboutImage2 from "images/about_2.jpg";
 import { ImageContainer } from "./styles";
