@@ -18,7 +18,6 @@ export default (props) => (
         }
       }
     `}
-    // eslint-disable-next-line react/jsx-props-no-spreading
     render={(data) => <Layout data={data} {...props} />}
   />
 );

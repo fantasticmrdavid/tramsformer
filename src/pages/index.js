@@ -1,7 +1,6 @@
 import { graphql } from "gatsby";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
-
-// import "antd/dist/antd.css";
+import Layout from "components/Layout";
 
 import Homepage from "./homepage";
 
@@ -48,4 +47,6 @@ export const query = graphql`query MyQuery {
     }
   }
 }`;
+
+Homepage.Layout = Layout;
 export default withPrismicPreview(Homepage);
