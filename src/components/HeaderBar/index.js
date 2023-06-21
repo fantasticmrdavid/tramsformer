@@ -3,7 +3,6 @@ import VisibilitySensor from "react-visibility-sensor";
 import BackToTopButton from "components/BackToTopButton";
 import {
   Container,
-  LeftMenu,
   NavItemExternal,
   Nav,
   NavItem,
@@ -47,8 +46,6 @@ export default () => {
     isBackToTopVisible: false,
   });
 
-  const isHome = typeof window !== "undefined" ? window.location.pathname === "/" : true;
-
   return (
     <Container id="headerBar">
       <VisibilitySensor
@@ -60,9 +57,6 @@ export default () => {
         }
       >
         <Nav>
-          <LeftMenu>
-            { !isHome && <NavItem to="/">{"> PROJECT TRAMSFORMATION"}</NavItem> }
-          </LeftMenu>
           <div>
             {
               navList.map((i) => (
