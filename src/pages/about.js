@@ -14,6 +14,12 @@ export const query = graphql`
   }
 `;
 
+
+export const Head = ({ data }) => {
+  const { site } = data
+  return <title>{`About | ${site.siteMetadata.title}`}</title>
+}
+
 const About = ({ data }) => {
   if (!data) return null;
   const { site: siteMetadata } = data;

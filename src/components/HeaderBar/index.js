@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from 'react'
 import VisibilitySensor from "react-visibility-sensor";
 import BackToTopButton from "components/BackToTopButton";
 import {
@@ -10,6 +10,7 @@ import {
   NoLinkNavItem,
   SubNavMenu,
 } from "./styles";
+import { LocationContext } from '../../contexts/LocationContext'
 
 const navList = [
   {
@@ -43,11 +44,12 @@ const navList = [
 ];
 
 export default () => {
+  const {pathname} = useContext(LocationContext);
   const [state, setState] = useState({
     isBackToTopVisible: false,
   });
 
-  const isHome = typeof window !== "undefined" ? window.location.pathname === "/" : true;
+  const isHome = pathname === "/";
 
   return (
     <Container id="headerBar">
