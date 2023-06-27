@@ -6,10 +6,6 @@ import {
 import { Post } from "../components/Post";
 import Homepage from "./homepage";
 
-export const Head = ({ data }) => {
-  const { site } = data
-  return <title>{`404 | ${site.siteMetadata.title}`}</title>
-}
 const Page404 = () => (
   <div className="not-found">
     <h1>404</h1>

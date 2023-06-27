@@ -1,12 +1,11 @@
-import React from "react";
+import * as React from "react"
 import {LocationProvider} from "./src/contexts/LocationContext";
-import { PrismicPreviewProvider } from 'gatsby-plugin-prismic-previews'
+import { PrismicPreviewProvider } from "gatsby-plugin-prismic-previews"
+import ReactDOM from 'react-dom/client'
 
 export const wrapRootElement = ({ element }) => (
   <PrismicPreviewProvider initialEnabled>
-    <LocationProvider location={location}>
-      {element}
-    </LocationProvider>
+    {element}
   </PrismicPreviewProvider>
 );
 

@@ -21,6 +21,14 @@ export default (props) => (
 );
 
 const Layout = ({ children }) => {
+
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
   return (
     <>
       <HeaderBar />
