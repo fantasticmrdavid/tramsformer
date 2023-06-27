@@ -4168,7 +4168,7 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001464, caniuse-lite@^1.0.30001503:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001504.tgz#eaf77e5c852dfa5f82c4924468c30602ac53744a"
   integrity sha512-5uo7eoOp2mKbWyfMXnGO9rJWOGU8duvzEiYITW+wivukL7yHH4gX9yuRaobu6El4jPxo6jKZfG+N6fB621GD/Q==
 
-canvas@2.11.2, canvas@^2.9.1:
+canvas@2.11.2, canvas@^2.6.1:
   version "2.11.2"
   resolved "https://registry.yarnpkg.com/canvas/-/canvas-2.11.2.tgz#553d87b1e0228c7ac0fc72887c3adbac4abbd860"
   integrity sha512-ItanGBMrmRV7Py2Z+Xhs7cT+FNt5K0vPL4p9EZ/UX/Mu7hFbkxSjKF2KVtPwX7UYWp7dRKnrTvReflgrItJbdw==
@@ -6918,13 +6918,6 @@ gatsby-plugin-prismic-previews@5.3.1:
     gatsby-node-helpers "^1.2.1"
     react-shadow "^19.0.2"
     tiny-hashes "^1.0.1"
-
-gatsby-plugin-react-helmet@6.11.0:
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-6.11.0.tgz#0d8a430820835b05317a5c5e81ab96b9dbb14a4b"
-  integrity sha512-LVjsRAaDEywv48ob+WQj7ljTVl5NXdJSu0ZrqXVW2Vzpwwoo5dfHvDPZJiMcxWMdilUOfVfcJcfGa20cp7S5xg==
-  dependencies:
-    "@babel/runtime" "^7.20.13"
 
 gatsby-plugin-sass@6.11.0:
   version "6.11.0"
