@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import BarPattern from "components/BarPattern";
 import TerminalText from "components/TerminalText";
 import Loadable from "@loadable/component";
@@ -16,13 +15,10 @@ import {
   TechStack,
 } from "./styles";
 
-export default ({ siteMetadata }) => {
+export default () => {
   const Trianglify = Loadable(() => import("@planningcenter/react-trianglify"));
   return (
     <Container>
-      <Helmet>
-        <title>{`About | ${siteMetadata.title}`}</title>
-      </Helmet>
       <Background>
         <Trianglify
           width={2000}

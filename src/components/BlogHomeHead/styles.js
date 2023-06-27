@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { fadeIn } from "styles/animations";
 import { media } from "styles/utils";
-import MastheadBackground from "images/masthead_tfw.png";
 
 export const Background = styled.div`
   position: absolute;
@@ -67,7 +66,7 @@ export const HeroImage = styled.div`
   right: 0px;
   width: 100%;
   height: 100%;
-  background: url(${MastheadBackground}) bottom right no-repeat;
+  background: ${(props) => `url(${props.src}) bottom right no-repeat`};
   animation: ${css`${fadeIn} 1s ease 1`};
   animation-fill-mode: forwards;
   display: none;

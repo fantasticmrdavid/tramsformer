@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import Post from "components/Post";
+import React from 'react'
 
 // Query for the Blog Post content in Prismic
 export const query = graphql`query BlogPostQuery($uid: String) {
@@ -73,4 +74,10 @@ export const query = graphql`query BlogPostQuery($uid: String) {
     }
   }
 }`;
+
+export const Head = ({ data }) => {
+  const { site } = data
+  const postTitle = data.prismicPost.data.title.richText[0].text
+  return <title>{`${postTitle} | ${site.siteMetadata.title}`}</title>
+}
 export default withPrismicPreview(Post);

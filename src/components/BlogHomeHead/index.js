@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 import Logo from "components/Logo";
 import BannerButtons from "components/BannerButtons";
 import ProjectStatus from "components/ProjectStatus";
 import SubscribeFrom from "components/SubscribeForm";
 import Loadable from "@loadable/component";
+import MastheadBackgroundFull from "images/masthead_tfw.png";
+import MastheadBackgroundLow from "images/masthead_tfw_low.png";
 import {
   Background,
   Container,
@@ -13,6 +15,14 @@ import {
 } from "./styles";
 
 const BlogHomeHead = ({ home }) => {
+  const [imgSrc, setImgSrc] = useState(MastheadBackgroundLow)
+  useEffect(() => {
+    const img = new Image();
+    img.src = MastheadBackgroundFull;
+    img.onload = () => {
+      setImgSrc(MastheadBackgroundFull);
+    };
+  }, [])
   const Trianglify = Loadable(() => import("@planningcenter/react-trianglify"));
   return (
     <Container data-wio-id={home ? home.id : undefined}>
@@ -28,7 +38,7 @@ const BlogHomeHead = ({ home }) => {
         />
       </Background>
       <Content>
-        <HeroImage />
+        <HeroImage src={imgSrc} />
         <Header>
           <Logo pretitle={home.headline.text} title="TFW" />
           <p className="blog-description">{home.description.text}</p>

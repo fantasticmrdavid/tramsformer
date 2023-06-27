@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Helmet } from "react-helmet";
 import { Date, RichText } from "prismic-reactjs";
 import BarPattern from "components/BarPattern";
 import Layout from "components/Layout";
@@ -41,11 +40,9 @@ const PostSlices = ({ slices }) => slices.map((slice, index) => {
   return res;
 });
 
-// Display the title, date, and content of the Post
 const PostBody = (props) => {
   const {
     blogPost,
-    site,
     nextPost,
     prevPost,
   } = props;
@@ -68,9 +65,6 @@ const PostBody = (props) => {
 
   return (
     <Container>
-      <Helmet>
-        <title>{`${postTitle} | ${site.siteMetadata.title}`}</title>
-      </Helmet>
       <Background>
         <Trianglify
           width={2000}
