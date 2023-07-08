@@ -10,7 +10,7 @@ export default () => (
     <Indicator />
     Project Status:
     <Edition>
-      In Production - 2021 Edition - 4/35 Units Available
+      In Production - 2021 Edition - 3/35 Units Available
     </Edition>
   </Container>
 );
