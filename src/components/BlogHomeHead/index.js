@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Logo from "components/Logo";
 import BannerButtons from "components/BannerButtons";
-import ProjectStatus from "components/ProjectStatus";
 import SubscribeFrom from "components/SubscribeForm";
 import Loadable from "@loadable/component";
 import MastheadBackgroundFull from "images/masthead_tfw.png";
@@ -44,7 +43,6 @@ const BlogHomeHead = ({ home }) => {
           <p className="blog-description">{home.description.text}</p>
           <SubscribeFrom />
           <BannerButtons />
-          <ProjectStatus />
         </Header>
       </Content>
     </Container>
