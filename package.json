@@ -4,11 +4,11 @@
   "description": "Project Tramsformation blog built with Gatsby.js using Prismic headless CMS",
   "author": "David Li",
   "dependencies": {
-    "@ant-design/icons": "5.3.7",
+    "@ant-design/icons": "5.4.0",
     "@loadable/component": "5.16.4",
     "@planningcenter/react-trianglify": "1.3.0",
     "animated-scroll-to": "2.3.0",
-    "antd": "5.19.2",
+    "antd": "5.19.4",
     "babel-plugin-styled-components": "2.1.4",
     "canvas": "2.11.2",
     "gatsby": "^5.13.4",
@@ -41,9 +41,9 @@
     "trianglify": "4.1.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.24.8",
-    "@typescript-eslint/eslint-plugin": "7.16.1",
-    "@typescript-eslint/parser": "7.16.1",
+    "@babel/eslint-parser": "7.25.1",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.1.0",
@@ -51,10 +51,10 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.9.0",
     "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-react": "7.34.4",
+    "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "4.6.2",
     "prettier": "3.3.3",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "keywords": [
     "gatsby"
