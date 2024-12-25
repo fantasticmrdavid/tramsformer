@@ -10,7 +10,7 @@
     "animated-scroll-to": "2.3.0",
     "antd": "5.22.2",
     "babel-plugin-styled-components": "2.1.4",
-    "canvas": "2.11.2",
+    "canvas": "3.0.0",
     "gatsby": "^5.13.4",
     "gatsby-alias-imports": "1.0.6",
     "gatsby-plugin-google-fonts": "1.0.1",
